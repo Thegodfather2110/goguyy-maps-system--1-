@@ -1,0 +1,13 @@
+services:
+  goguyy-maps:
+    build: .
+    container_name: goguyy-maps
+    ports:
+      - "8000:8000"
+    environment:
+      GOGUYY_DB_PATH: /app/data/goguyy.sqlite3
+    volumes:
+      - goguyy_data:/app/data
+    restart: unless-stopped
+volumes:
+  goguyy_data:
